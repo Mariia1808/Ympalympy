@@ -17,6 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 from django.shortcuts import render
+from rnaul_main import views
+from django.conf.urls import url
+from django.views.decorators.csrf import csrf_exempt
+
+
 vue_urls = [
   path('', lambda request: HttpResponse(render(request, 'vue_index.html'))),
   path('another-path/', lambda request: HttpResponse(render(request, 'vue_index.html'))),
@@ -24,4 +29,5 @@ vue_urls = [
 urlpatterns = [
   path('admin/', admin.site.urls),
   path('', include(vue_urls)),
+  url(r'^api/toxicity$', csrf_exempt(views.toxicity_rate)),
 ]
