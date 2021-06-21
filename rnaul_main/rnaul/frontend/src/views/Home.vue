@@ -1,7 +1,9 @@
 <template>
 <div>   
   <form @submit.prevent="login">     
-    <h3>Login</h3>     
+    <h3>Login</h3>
+    <br>
+    <br>
     <input
       style="margin-right: 20px; margin-top: 10px"       
       type="email"       
