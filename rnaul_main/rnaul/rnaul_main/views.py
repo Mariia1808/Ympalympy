@@ -142,5 +142,5 @@ def toxicity_rate(request):
         responseData = {
             "score" : toxicity_rating
         }
-        return JsonResponse(responseData, status=status.HTTP_201_CREATED)
+        return JsonResponse(responseData, status=status.HTTP_200_OK)
 
